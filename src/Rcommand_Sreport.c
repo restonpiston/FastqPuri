@@ -89,19 +89,6 @@ char *command_Sreport(char **new_dir_ptr){
   //char *new_dir = mkdtemp(template);
   char new_dir[] ="/tmp/FastqPuri_123456";
   mkdir(new_dir,0700);
-  if (new_dir==NULL){
-    fprintf(stderr,"Null pointer!!");
-  }else{
-    fprintf(stderr,"NOT a Null pointer!!\n");
-    fprintf(stderr,"%c\n",new_dir[0]);
-    size_t l=strlen(new_dir);
-    fprintf(stderr,"length: %d\n", l);
-    fprintf(stderr,"errno: %d\n", errno);
-
-    
-    fprintf(stderr,"%s",new_dir);
-    fprintf(stderr,"NOT a Null pointer!!\n");
-  }
   *new_dir_ptr = new_dir;
   char old_dir_tmp[MAX_FILENAME];
   strncpy(old_dir_tmp, par_SR.Rmd_file, MAX_FILENAME-1);
@@ -112,8 +99,6 @@ char *command_Sreport(char **new_dir_ptr){
   char style_fname_old[MAX_FILENAME], utils_fname_old[MAX_FILENAME];
   char style_fname_new[MAX_FILENAME], utils_fname_new[MAX_FILENAME];
   char rmd_summary_report_new[MAX_FILENAME];
- 
-  fprintf(stderr,"%s",rmd_summary_report_name);
 
   snprintf(rmd_summary_report_new, MAX_FILENAME, "%s/%s", new_dir, rmd_summary_report_name);  
   snprintf(style_fname_old, MAX_FILENAME, "%s/style.css", old_dir);  

@@ -70,6 +70,9 @@ int main(int argc, char *argv[]) {
         fprintf(stderr, "Most probably, a html file will not be generated.\n");
         fprintf(stderr, "File: %s, line: %d\n", __FILE__, __LINE__);
         fprintf(stderr, "Exiting program.\n");
+        char rm_cmd[MAX_FILENAME];
+        snprintf(rm_cmd, MAX_FILENAME, "rm -fr %s", new_dir);
+        system(rm_cmd);
         exit(EXIT_FAILURE);
     }
   }
