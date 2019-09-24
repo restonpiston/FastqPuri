@@ -86,6 +86,9 @@ char *command_Sreport(char **new_dir_ptr){
 #ifdef HAVE_RPKG
   char template[] = "/tmp/FastqPuri_XXXXXX";
   char *new_dir = mkdtemp(template);
+  if (new_dir==NULL){
+    fprintf(stderr,"Null pointer!!");
+  }
   *new_dir_ptr = new_dir;
   char old_dir_tmp[MAX_FILENAME];
   strncpy(old_dir_tmp, par_SR.Rmd_file, MAX_FILENAME-1);
