@@ -86,7 +86,9 @@ char *command_Sreport(char **new_dir_ptr){
   } else {
 #ifdef HAVE_RPKG
   char template[] = "/tmp/FastqPuri_XXXXXX";
-  char *new_dir = mkdtemp(template);
+  //char *new_dir = mkdtemp(template);
+  char new_dir[] ="/tmp/FastqPuri_123456";
+  mkdir(new_dir);
   if (new_dir==NULL){
     fprintf(stderr,"Null pointer!!");
   }else{
