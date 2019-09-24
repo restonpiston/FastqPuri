@@ -97,7 +97,7 @@ char *command_Sreport(char **new_dir_ptr){
   char style_fname_new[MAX_FILENAME], utils_fname_new[MAX_FILENAME];
   char rmd_summary_report_new[MAX_FILENAME];
  
-  fprintf(stderr,"%s",rmd_summary_report_name_tmp);
+  fprintf(stderr,"%s",rmd_summary_report_name);
   snprintf(rmd_summary_report_new, MAX_FILENAME, "%s/%s", new_dir, rmd_summary_report_name);  
   snprintf(style_fname_old, MAX_FILENAME, "%s/style.css", old_dir);  
   snprintf(style_fname_new, MAX_FILENAME, "%s/style.css", new_dir);  
