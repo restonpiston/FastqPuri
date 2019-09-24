@@ -31,6 +31,7 @@
 #include <libgen.h>
 #include <strings.h>
 #include <unistd.h>
+#include <errno.h>
 #include "tinydir.h"
 #include "Rcommand_Sreport.h"
 #include "init_Sreport.h"
@@ -90,6 +91,7 @@ char *command_Sreport(char **new_dir_ptr){
     fprintf(stderr,"Null pointer!!");
   }else{
     fprintf(stderr,"NOT a Null pointer!!\n");
+    fprintf(stderr,"errno: %d\n", errno);
     fprintf(stderr,"%s",new_dir);
     fprintf(stderr,"NOT a Null pointer!!\n");
   }
