@@ -89,8 +89,9 @@ char *command_Sreport(char **new_dir_ptr){
   if (new_dir==NULL){
     fprintf(stderr,"Null pointer!!");
   }else{
-    fprintf(stderr,"NOT a Null pointer!!");
+    fprintf(stderr,"NOT a Null pointer!!\n");
     fprintf(stderr,"%s",new_dir);
+    fprintf(stderr,"NOT a Null pointer!!\n");
   }
   *new_dir_ptr = new_dir;
   char old_dir_tmp[MAX_FILENAME];
