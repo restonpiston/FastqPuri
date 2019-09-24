@@ -6,7 +6,7 @@
 cmake_minimum_required(VERSION 2.8)
 
 # Set compiler 
-set(CMAKE_C_COMPILER "gcc" CACHE STRING "default C compiler")
+set(CMAKE_C_COMPILER "/usr/bin/gcc" CACHE STRING "default C compiler")
 
 # Project's name
 project(FastqPuri)
