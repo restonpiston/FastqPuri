@@ -86,13 +86,12 @@ char *command_Sreport(char **new_dir_ptr){
   } else {
 #ifdef HAVE_RPKG
   char template[] = "/tmp/FastqPuri_XXXXXX";
-  const char *new_dir = mkdtemp(template);
+  char *new_dir = mkdtemp(template);
   if (new_dir==NULL){
     fprintf(stderr,"Null pointer!!");
   }else{
     fprintf(stderr,"NOT a Null pointer!!\n");
     fprintf(stderr,"%c\n",new_dir[0]);
-    size_t l=strlen(new_dir);
     fprintf(stderr,"length: %d\n", l);
     fprintf(stderr,"errno: %d\n", errno);
 
