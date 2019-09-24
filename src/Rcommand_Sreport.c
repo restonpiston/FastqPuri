@@ -90,6 +90,7 @@ char *command_Sreport(char **new_dir_ptr){
     fprintf(stderr,"Null pointer!!");
   }else{
     fprintf(stderr,"NOT a Null pointer!!");
+    fprintf(stderr,"%s",new_dir);
   }
   *new_dir_ptr = new_dir;
   char old_dir_tmp[MAX_FILENAME];
@@ -103,7 +104,7 @@ char *command_Sreport(char **new_dir_ptr){
   char rmd_summary_report_new[MAX_FILENAME];
  
   fprintf(stderr,"%s",rmd_summary_report_name);
-  fprintf(stderr,"%s",new_dir);
+
   snprintf(rmd_summary_report_new, MAX_FILENAME, "%s/%s", new_dir, rmd_summary_report_name);  
   snprintf(style_fname_old, MAX_FILENAME, "%s/style.css", old_dir);  
   snprintf(style_fname_new, MAX_FILENAME, "%s/style.css", new_dir);  
