@@ -97,12 +97,17 @@ char *command_Sreport(char **new_dir_ptr){
   char style_fname_new[MAX_FILENAME], utils_fname_new[MAX_FILENAME];
   char rmd_summary_report_new[MAX_FILENAME];
  
-
-  snprintf(rmd_summary_report_new, MAX_FILENAME, "%s/%s", new_dir, rmd_summary_report_name);  
-  snprintf(style_fname_old, MAX_FILENAME, "%s/style.css", old_dir);  
+  fprintf(stderr, "- Creating rmd\n");
+  snprintf(rmd_summary_report_new, MAX_FILENAME, "%s/%s", new_dir, rmd_summary_report_name);
+  fprintf(stderr, "- Created rmd\n");
+  snprintf(style_fname_old, MAX_FILENAME, "%s/style.css", old_dir);
+  fprintf(stderr, "- Created style\n");
   snprintf(style_fname_new, MAX_FILENAME, "%s/style.css", new_dir);  
+  fprintf(stderr, "- Created style\n");
   snprintf(utils_fname_old, MAX_FILENAME, "%s/utils.R", old_dir);  
+  fprintf(stderr, "- Created utils\n");
   snprintf(utils_fname_new, MAX_FILENAME, "%s/utils.R", new_dir);  
+  fprintf(stderr, "- Created utils\n");
    
   copy_file(par_SR.Rmd_file, rmd_summary_report_new);
   copy_file(utils_fname_old, utils_fname_new);
