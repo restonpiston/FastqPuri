@@ -91,7 +91,11 @@ char *command_Sreport(char **new_dir_ptr){
     fprintf(stderr,"Null pointer!!");
   }else{
     fprintf(stderr,"NOT a Null pointer!!\n");
+    size_t l=strlen(new_dir);
+    fprintf(stderr,"length: %d\n", l);
     fprintf(stderr,"errno: %d\n", errno);
+
+    
     fprintf(stderr,"%s",new_dir);
     fprintf(stderr,"NOT a Null pointer!!\n");
   }
