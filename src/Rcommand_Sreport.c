@@ -85,8 +85,8 @@ char *command_Sreport(char **new_dir_ptr){
     fprintf(stderr, "Maybe something went wrong with Qreport trying to generate such files.\n");
   } else {
 #ifdef HAVE_RPKG
-  char template[] = "/tmp/FastqPuri_XXXXXX";
-  char *new_dir = mkdtemp(template);
+  char templatevar[] = "/tmp/FastqPuri_XXXXXX";
+  char *new_dir = mkdtemp(templatevar);
   if (new_dir==NULL){
     fprintf(stderr,"Null pointer!!");
   }else{
