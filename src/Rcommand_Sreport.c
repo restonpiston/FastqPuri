@@ -31,6 +31,7 @@
 #include <libgen.h>
 #include <strings.h>
 #include <unistd.h>
+#include <errno.h>
 #include "tinydir.h"
 #include "Rcommand_Sreport.h"
 #include "init_Sreport.h"
@@ -85,7 +86,9 @@ char *command_Sreport(char **new_dir_ptr){
   } else {
 #ifdef HAVE_RPKG
   char template[] = "/tmp/FastqPuri_XXXXXX";
-  char *new_dir = mkdtemp(template);
+  //char *new_dir = mkdtemp(template);
+  char *new_dir = "/tmp/FastqPuri_123456";
+  mkdir(new_dir,0700);
   *new_dir_ptr = new_dir;
   char old_dir_tmp[MAX_FILENAME];
   strncpy(old_dir_tmp, par_SR.Rmd_file, MAX_FILENAME-1);
@@ -96,7 +99,6 @@ char *command_Sreport(char **new_dir_ptr){
   char style_fname_old[MAX_FILENAME], utils_fname_old[MAX_FILENAME];
   char style_fname_new[MAX_FILENAME], utils_fname_new[MAX_FILENAME];
   char rmd_summary_report_new[MAX_FILENAME];
- 
 
   snprintf(rmd_summary_report_new, MAX_FILENAME, "%s/%s", new_dir, rmd_summary_report_name);  
   snprintf(style_fname_old, MAX_FILENAME, "%s/style.css", old_dir);  

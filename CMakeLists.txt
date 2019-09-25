@@ -100,7 +100,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 
 
 # Set compiler flags
-set(CMAKE_C_FLAGS  "-Wall -Wextra -O3 -march=native -std=c11 -D_DEFAULT_SOURCE") 
+set(CMAKE_C_FLAGS  "-Wall -Wextra -O3 -march=native -std=c11 -D_DEFAULT_SOURCE -g3") 
 message("-- Setting compiler flags: ${CMAKE_C_FLAGS}")
 
 # Set linker flags
