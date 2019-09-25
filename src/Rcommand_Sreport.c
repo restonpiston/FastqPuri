@@ -87,7 +87,7 @@ char *command_Sreport(char **new_dir_ptr){
 #ifdef HAVE_RPKG
   char template[] = "/tmp/FastqPuri_XXXXXX";
   //char *new_dir = mkdtemp(template);
-  char new_dir[] ="/tmp/FastqPuri_123456";
+  char *new_dir = "/tmp/FastqPuri_123456";
   mkdir(new_dir,0700);
   *new_dir_ptr = new_dir;
   char old_dir_tmp[MAX_FILENAME];
