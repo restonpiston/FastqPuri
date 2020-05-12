@@ -122,7 +122,8 @@ void printHelpDialog_trimFilter() {
    "               FRAC:   removes the reads if the uncertainty is above a threshold\n"
    "                       (-u), default to 10 percent\n"
    "               All reads are discarded if they are shorter than the\n"
-   "               sequence length specified by -m/--minL.\n";
+   "               sequence length specified by -m/--minL.\n"
+   " -u, --uncert  percentage of uncertainity tolerated\n";
   fprintf(stderr, "%s", dialog);
 }
 
@@ -171,7 +172,7 @@ void getarg_trimFilter(int argc, char **argv) {
   int option;
   int method_len = 20;
   Split globTrim, adapt, tree_fa, index;
-  while ((option = getopt_long(argc, argv, "hvf:l:o:z:A:q:x:a:C:Q:m:p:g:N:0:r:u",
+  while ((option = getopt_long(argc, argv, "hvf:l:o:z:A:q:x:a:C:Q:m:p:g:N:0:ru:",
         long_options, 0)) != -1) {
     fprintf(stderr,"%c\n",option);
     switch (option) {
@@ -314,7 +315,7 @@ void getarg_trimFilter(int argc, char **argv) {
         break;
     }
   }
-
+  fprintf(stderr,"Read options!\n");
   // Checking the input
   // Ifq is a mandatory argument
   if (par_TF.Ifq == NULL) {

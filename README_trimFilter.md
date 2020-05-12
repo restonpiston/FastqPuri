@@ -40,6 +40,8 @@ Options:
                <ADAPTERS.fa>: fasta file containing adapters,
                <mismatches>: maximum mismatch count allowed,
                <score>: score threshold  for the aligner.
+ -r, --adapter-rm  if the adapter is matched, instead of trimming it
+               , the reads are removed.                
  -x, --idx     index input file. To be included with any method. 
                3 fields separated by colons:
                <INDEX_FILE>: output of makeTree, makeBloom,
@@ -86,7 +88,11 @@ Options:
                ALL:    removes all reads containing N's,
                ENDS:   trims ends of reads with N's,
                STRIPS: looks for the largest substring with no N's.
-               All reads are discarded if they are shorter than `minL`.
+               FRAC:   removes the reads if the uncertainty is above a threshold
+                       (-u), default to 10 percent
+               All reads are discarded if they are shorter than the
+               sequence length specified by -m/--minL.
+ -u, --uncert  percentage of uncertainity tolerated
 ```
 
 NOTE: the parameters -l or --length are meant to identify the length
