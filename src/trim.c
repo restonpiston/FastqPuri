@@ -472,7 +472,11 @@ static int align_uint32(Fq_read *seq, Ad_seq *ptr_adap, bool all) {
     }
   }
   if (score > threshold) {
-    return((pos < minL) ? 0 : Qtrim_global(seq, 0, seq->L+1-pos, 'A'));
+    if (par_TF.adapter_rm){
+      return 0;
+    }else{
+      return((pos < minL) ? 0 : Qtrim_global(seq, 0, seq->L+1-pos, 'A'));
+    }
   }
   // Controlar bytes al inicio del read
   // loop done on the adapter sequence  without considering the first
@@ -498,7 +502,11 @@ static int align_uint32(Fq_read *seq, Ad_seq *ptr_adap, bool all) {
     pos--;
   }
   if (score > threshold) {
-    return((pos < minL) ? 0 : Qtrim_global(seq, 0, seq->L+1-pos, 'A'));
+    if (par_TF.adapter_rm){
+      return 0;
+    }else{
+      return((pos < minL) ? 0 : Qtrim_global(seq, 0, seq->L+1-pos, 'A'));
+    }
   }
   return 1;
 }
@@ -605,7 +613,11 @@ static int align_uint64(Fq_read *seq, Ad_seq *ptr_adap) {
     pos--;
   }
   if (score > threshold) {
-    return((pos < minL) ? 0 : Qtrim_global(seq, 0, seq->L+1-pos, 'A'));
+    if (par_TF.adapter_rm){
+      return 0;
+    }else{
+      return((pos < minL) ? 0 : Qtrim_global(seq, 0, seq->L+1-pos, 'A'));
+    }
   }
   // Controlar bytes al inicio del read
   // loop done on the adapter sequence  without considering the first
@@ -630,7 +642,11 @@ static int align_uint64(Fq_read *seq, Ad_seq *ptr_adap) {
     pos--;
   }
   if (score > threshold) {
-    return((pos < minL) ? 0 : Qtrim_global(seq, 0, seq->L+1-pos, 'A'));
+    if (par_TF.adapter_rm){
+      return 0;
+    }else{
+      return((pos < minL) ? 0 : Qtrim_global(seq, 0, seq->L+1-pos, 'A'));
+    }
   }
   return align_uint32(seq, ptr_adap, false);
 }

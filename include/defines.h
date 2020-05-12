@@ -96,7 +96,7 @@
 #define ALL 1       /**< Trims if a lowQ base calling | N is found */
 #define ENDS 2      /**< Trims at the ends */
 // trimN only
-#define STRIP 3     /**< Looks for the largest N-free sequence */
+#define STRIP 4     /**< Looks for the largest N-free sequence */
 // trimQ only
 #define FRAC  3     /**< Discards a read if it contains > percent lowQ bases*/
 #define ENDSFRAC 4  /**< trims at the ends and discards a read if the
